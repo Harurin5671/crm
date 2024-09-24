@@ -2,38 +2,60 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   //General Colors
-  static const white = Colors.white;
-  static const secondary = Color(0xffa6a6a6);
-  static const iconGray = Color(0xff767676);
+  static const black = Color(0xff151515);
   static const contrast = Color(0xfffffffc);
-  static const outlinedHover = Color(0xfff6f7fc);
-  static const main = Color(0xff2e4cce);
-  static const secondaryMain = Color(0xff8a8d92);
-  static const lightAlternativeLight = Color(0xff4867ef);
-  static const lightAlternativeDark = Color(0xff213694);
-  static const outlinedRestingHover = Color(0xffcdd6f9);
-  static const secondaryAlternativeLight = Color(0xff9c9fa3);
-  static const secondaryAlternativeDark = Color(0xff4d5056);
-  static const secondaryContainerHover = Color(0xff777b81);
-  static const secondaryOutlinedRestingHover = Color(0xffc5c6c7);
-  static const infoMain = Color(0xff00b1ff);
-  static const infoAlternativeLight = Color(0xff04baff);
-  static const infoAlternativeDark = Color(0xff0071b5);
-  static const infoContainerHover = Color(0xff009cf9);
-  static const successMain = Color(0xff00ca15);
-  static const successAlternativeLight = Color(0xff1bd031);
-  static const successAlternativeDark = Color(0xff00810d);
-  static const successContainerHover = Color(0xff00b212);
-  static const warningMain = Color(0xfffdb400);
-  static const warningAlternativeLight = Color(0xffffb537);
-  static const warningAlternativeDark = Color(0xffa17300);
-  static const warningContainedHover = Color(0xffde9e00);
-  static const errorMain = Color(0xffff4c2d);
-  static const errorAlternativeLight = Color(0xffff6146);
   static const errorAlternativeDark = Color(0xffd5311d);
-  static const errorContainerHover = Color(0xffff4328); 
+  static const errorAlternativeLight = Color(0xffff6146);
+  static const errorContainerHover = Color(0xffff4328);
+  static const errorMain = Color(0xffff4c2d);
+  static const iconGray = Color(0xff767676);
+  static const infoAlternativeDark = Color(0xff0071b5);
+  static const infoAlternativeLight = Color(0xff04baff);
+  static const infoContainerHover = Color(0xff009cf9);
+  static const infoMain = Color(0xff00b1ff);
+  static const lightAlternativeDark = Color(0xff213694);
+  static const lightAlternativeLight = Color(0xff4867ef);
+  static const main = Color(0xff2e4cce);
+  static const outlinedHover = Color(0xfff6f7fc);
+  static const outlinedRestingHover = Color(0xffcdd6f9);
+  static const secondary = Color(0xffa6a6a6);
+  static const secondaryAlternativeDark = Color(0xff4d5056);
+  static const secondaryAlternativeLight = Color(0xff9c9fa3);
+  static const secondaryBg = Color(0xff9c9fa3);
+  static const secondaryContainerHover = Color(0xff777b81);
+  static const secondaryMain = Color(0xff8a8d92);
+  static const secondaryOutlinedRestingHover = Color(0xffc5c6c7);
+  static const successAlternativeDark = Color(0xff00810d);
+  static const successAlternativeLight = Color(0xff1bd031);
+  static const successContainerHover = Color(0xff00b212);
+  static const successMain = Color(0xff00ca15);
+  static const warningAlternativeDark = Color(0xffa17300);
+  static const warningAlternativeLight = Color(0xffffb537);
+  static const warningContainedHover = Color(0xffde9e00);
+  static const warningMain = Color(0xfffdb400);
+  static const white = Colors.white;
+  static const darkText = Color(0xffd6cbe2);
 
   // Light Colors
+  //Text Colors
+  static const lightTextPrimary = Color(0xff666c74);
+  static const lightTextSecondary = Color(0xff7c767c);
+  static const lightTextDisabled = Color(0xffb6b2b5);
+  //Action Colors
+  static const lightActionActive = Color(0xff969296);
+  static const lightActionHover = Color(0xfff7f7f6);
+  static const lightActionSelected = Color(0xfff1efed);
+  static const lightActionDisabled = Color(0xffcdcbcc);
+  static const lightActionDisabledBg = Color(0xffe8e6e5);
+  static const lightActionFocus = Color(0xffe8e6e5);
+  //Custom BG Colors
+  static const lightCustomBgPrimary = Color(0xffC5B8D8);
+  static const lightCustomBgSecondary = Color(0xffC6C7C6);
+  static const lightInfoCustomBg = Color(0xffB0C6DB);
+  static const lightSuccessCustomBg = Color(0xffB9CCBA);
+  static const lightWarningCustomBg = Color(0xffD9BFAA);  
+  static const lightErrorCustomBg = Color(0xffD6B5B3);
+  static const lightMenuActive = Color(0xff093D81);
   //Primary Colors
   static const primaryLightMain = main;
   static const primaryLightAlternativeLight = lightAlternativeLight;
@@ -85,6 +107,24 @@ class AppColors {
   static const dangerLightOutlinedRestingHover = Color(0xfffea7a8);
 
   //Dark Colors
+  //Text Colors
+  static const darkTextPrimary = darkText;
+  static const darkTextSecondary = darkText;
+  static const darkTextDisabled = darkText;
+  //Action Colors
+  static const darkActionActive = Color(0xff9290ab);
+  static const darkActionHover = Color(0xff383553);
+  static const darkActionSelected = Color(0xff3e3b58);
+  static const darkActionDisabled = Color(0xff605d78);
+  static const darkActionDisabledBg = Color(0xff474261);
+  static const darkActionFocus = Color(0xff474261);
+  //Custom BG Colors
+  static const darkCustomBgPrimary = Color(0xff3d3360);
+  static const darkCustomBgSecondary = Color(0xff3d3854);
+  static const darkInfoCustomBg = Color(0xff2f3a60);
+  static const darkSuccessCustomBg = Color(0xff353d4d);
+  static const darkWarningCustomBg = Color(0xff4A3F43);
+  static const darkErrorCustomBg = Color(0xff483149);
   //Dark Primary Colors
   static const primaryDarkMain = main;
   static const primaryDarkAlternativeLight = lightAlternativeLight;
