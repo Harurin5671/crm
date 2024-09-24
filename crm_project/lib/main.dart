@@ -21,8 +21,8 @@ class MainApp extends StatelessWidget {
       theme: AppTheme().lightTheme,
       // darkTheme: AppTheme().darkTheme,
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.home,
-      unknownRoute: GetPage(name: AppRoutes.notFound, page: () => const NotFoundScreen()),
+      initialRoute: '/sign-up',
+      unknownRoute: GetPage(title: 'Not found', name: '/not-found', page: () => const NotFoundScreen()),
     );
   }
 }
