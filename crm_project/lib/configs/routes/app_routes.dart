@@ -7,7 +7,17 @@ class AppRoutes {
   static const notFound = '/not-found';
 
   static final routes = [
-    GetPage(title: 'Sign Up', name: '/sign-up', page: () => const SignUpScreen()),
-    GetPage(title: 'Home', name: '/home', page: () => const HomeScreen()),
+    GetPage(
+      title: 'Sign Up',
+      name: '/sign-up',
+      page: () => const SignUpScreen(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
+      title: 'Home',
+      name: '/home',
+      page: () => const HomeScreen(),
+      transition: Transition.fadeIn,
+    ),
   ];
 }
