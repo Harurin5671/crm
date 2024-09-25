@@ -14,6 +14,15 @@ class AppTheme {
     ),
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.lightBodyBg,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.lightBodyBg,
+      elevation: 0,
+      titleTextStyle: GoogleFonts.kalam(
+        color: AppColors.lightTextPrimary,
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+      )
+    ),
     inputDecorationTheme: InputDecorationTheme(
         labelStyle: const TextStyle(
           color: AppColors.lightTextDisabled,
@@ -46,6 +55,11 @@ class AppTheme {
         elevation: 5,
       ),
     ),
+    iconButtonTheme: const IconButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStatePropertyAll(AppColors.lightActionHover)
+      )
+    )
   );
 
   final darkTheme = ThemeData(
@@ -59,6 +73,15 @@ class AppTheme {
     ),
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.darkBodyBg,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.darkBodyBg,
+      elevation: 0,
+      titleTextStyle: GoogleFonts.kalam(
+        color: AppColors.darkTextPrimary,
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+      )
+    ),
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: const TextStyle(
         color: AppColors.darkTextDisabled,
@@ -91,6 +114,11 @@ class AppTheme {
         backgroundColor: AppColors.primaryDarkContainedHover,
         elevation: 5,
       ),
+    ),
+    iconButtonTheme: const IconButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStatePropertyAll(AppColors.darkActionHover),
+      )
     )
   );
 }

@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/sign-up',
       unknownRoute: GetPage(
           title: 'Not found',
-          name: '/not-found',
+          name: ConstantRoutesApp.notFound,
           page: () => const NotFoundScreen()),
     );
   }
