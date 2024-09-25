@@ -1,3 +1,4 @@
+import 'package:crm_project/screens/clients/add_client_screen.dart';
 import 'package:get/get.dart';
 
 import 'package:crm_project/screens/screens.dart';
@@ -18,6 +19,11 @@ class AppRoutes {
       name: '/home',
       page: () => const HomeScreen(),
       transition: Transition.fadeIn,
+    ),
+    GetPage(
+      title: 'Client',
+      name: '/client',
+      page: () => const AddClientScreen(),
     ),
   ];
 }

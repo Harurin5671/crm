@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
                   child: Column(
                     children: [
-                      const Header(),
+                      const Header(title: 'Dashboard', subtitle: 'Payments updates'),
                       SizedBox(height: SizeConfig.blockSizeHorizontal * 4,),
                       SizedBox(
                         width: SizeConfig.screenWidth,
