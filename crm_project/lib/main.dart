@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:crm_project/configs/configs.dart';
-import 'package:crm_project/screens/screens.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,10 +21,7 @@ class MainApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       getPages: AppRoutes.routes,
       initialRoute: '/sign-up',
-      unknownRoute: GetPage(
-          title: 'Not found',
-          name: ConstantRoutesApp.notFound,
-          page: () => const NotFoundScreen()),
+      unknownRoute: AppRoutes.notFound,
     );
   }
 }

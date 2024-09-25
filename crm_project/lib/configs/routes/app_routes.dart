@@ -30,4 +30,10 @@ class AppRoutes {
       page: () => const AddClientScreen(),
     ),
   ];
+
+  static final notFound = GetPage(
+    title: 'Not found',
+    name: ConstantRoutesApp.notFound,
+    page: () => const NotFoundScreen(),
+  );
 }
