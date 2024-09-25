@@ -33,7 +33,7 @@ class AppColors {
   static const warningAlternativeLight = Color(0xffffb537);
   static const warningContainedHover = Color(0xffde9e00);
   static const warningMain = Color(0xfffdb400);
-  static const white = Colors.white;
+  static const white = Color(0xffffffff);
   static const darkText = Color(0xffd6cbe2);
 
   // Light Colors
@@ -105,7 +105,15 @@ class AppColors {
   static const dangerLightContainedHover = Color(0xffff4328);
   static const dangerLightOutlinedHover = outlinedHover;
   static const dangerLightOutlinedRestingHover = Color(0xfffea7a8);
-
+  //Other Colors
+  static const lightDivider = Color(0xffDCDBDD);
+  static const lightOutlineBorder = Color(0xffC0C1C3);
+  static const lightInputLine = Color(0xffC5C2C7);
+  static const lightOverlay = Color(0xff89868C);
+  static const lightSnackbarBg = Color(0xff1B1B1B);
+  static const lightBodyBg = Color(0xffEFEEF5);
+  static const lightPaper = Color(0xffFEFEFE);
+  
   //Dark Colors
   //Text Colors
   static const darkTextPrimary = darkText;
@@ -174,4 +182,12 @@ class AppColors {
   static const dangerDarkContainedHover = errorContainerHover;
   static const dangerDarkOutlinedHover = Color.fromRGBO(255, 67, 40, 0.3);
   static const dangerDarkOutlinedRestingHover = Color(0xff993c4e);
+  //Other Colors
+  static const darkDivider = Color(0xff474261);
+  static const darkOutlineBorder = Color(0xff5b5675);
+  static const darkInputLine = Color(0xff595473);
+  static const darkOverlay = Color(0xff2c2b42);
+  static const darkSnackbarBg = white;
+  static const darkBodyBg = Color(0xff28243d);
+  static const darkPaper = Color(0xff312c4a);
 }
