@@ -19,6 +19,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme().lightTheme,
       // darkTheme: AppTheme().darkTheme,
+      // themeMode: ThemeMode.system,
       getPages: AppRoutes.routes,
       initialRoute: '/sign-up',
       unknownRoute: GetPage(
