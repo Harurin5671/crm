@@ -1,3 +1,4 @@
+import 'package:crm_project/screens/clients/add_client_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
@@ -90,6 +91,16 @@ class SideMenu extends StatelessWidget {
                       width: 40,
                     ),
                     onPressed: () {}),
+                IconButton(
+                    iconSize: 20,
+                    padding: const EdgeInsets.all(15),
+                    icon: SvgPicture.asset(
+                      'assets/icons/svg/client.svg',
+                      colorFilter: const ColorFilter.mode(AppColors.iconGray, BlendMode.srcIn),
+                      height: 40,
+                      width: 40,
+                    ),
+                    onPressed: () => const AddClientScreen()),
               ],
             ),
         ),
