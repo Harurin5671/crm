@@ -18,8 +18,8 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme().lightTheme,
-      // darkTheme: AppTheme().darkTheme,
-      // themeMode: ThemeMode.system,
+      darkTheme: AppTheme().darkTheme,
+      themeMode: ThemeMode.system,
       getPages: AppRoutes.routes,
       initialRoute: '/sign-up',
       unknownRoute: GetPage(
