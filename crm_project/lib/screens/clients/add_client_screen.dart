@@ -1,9 +1,11 @@
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
+
 import 'package:http/http.dart' as http;
+
 import 'package:crm_project/configs/configs.dart';
 import 'package:crm_project/widgets/home/home.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class AddClientScreen extends StatefulWidget {
   const AddClientScreen({super.key});
@@ -27,7 +29,7 @@ class _AddClientScreenState extends State<AddClientScreen> {
 
   // Función para consultar el DNI usando la API de apis.net.pe
   Future<void> consultarDNI(String dni) async {
-    final String token = 'TOKEN_PIPIPI'; // Reemplaza con tu token de apis.net.pe
+    final String token = 'TOKEN_PIPIPI';
     final url = Uri.parse('https://api.apis.net.pe/v2/reniec/dni?numero=$dni');
     
     final response = await http.get(

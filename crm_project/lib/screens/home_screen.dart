@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
       ),
       appBar: !Responsive.isDesktop(context)
           ? AppBar(
-              elevation: 0,
+              elevation: 15,
               backgroundColor: AppColors.white,
               leading: IconButton(
                 onPressed: () {

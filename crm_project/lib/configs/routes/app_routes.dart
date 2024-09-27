@@ -1,4 +1,3 @@
-import 'package:crm_project/screens/clients/add_client_screen.dart';
 import 'package:get/get.dart';
 
 import 'package:crm_project/configs/configs.dart';
@@ -11,12 +10,14 @@ class AppRoutes {
       name: ConstantRoutesApp.signUp,
       page: () => const SignUpScreen(),
       transition: Transition.fadeIn,
+      binding: SignUpBinding(),
     ),
     GetPage(
       title: 'Login',
       name: ConstantRoutesApp.login,
       page: () => const LoginScreen(),
       transition: Transition.fadeIn,
+      binding: LoginBinding(),
     ),
     GetPage(
       title: 'Home',
