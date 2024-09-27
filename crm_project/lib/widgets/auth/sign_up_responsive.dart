@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 import 'package:crm_project/utils/utils.dart';
 import 'package:crm_project/configs/configs.dart';
+import 'package:crm_project/widgets/widgets.dart';
 import 'package:crm_project/controllers/controllers.dart';
 
 class SignUpResponsive extends GetView<SignUpController> {
@@ -110,13 +111,8 @@ class SignUpResponsive extends GetView<SignUpController> {
                             () => Checkbox(
                               value: controller.isAcceptTerms.value,
                               onChanged: (value) {
-                                // !controller.isAcceptTerms.value;
                                 controller.updateTerms(value!);
                               },
-                              activeColor: controller.isAcceptTerms.value
-                                  ? AppColors.primaryDarkMain
-                                  : AppColors.secondary,
-                              checkColor: AppColors.white,
                             ),
                           ),
                           const SizedBox(
@@ -140,17 +136,16 @@ class SignUpResponsive extends GetView<SignUpController> {
                       ElevatedButton(
                         onPressed: () async {
                           bool isValid = validateAndSaveForm(signUpFormKey);
+
                           if (isValid) {
                             if (!controller.isAcceptTerms.value) {
-                              Get.snackbar(
-                                icon: const Icon(
-                                  Icons.info_outline,
-                                  color: AppColors.white,
-                                ),
-                                'Términos y Condiciones',
-                                'Debes aceptar los términos y condiciones para continuar.',
-                                colorText: AppColors.white,
-                                backgroundColor: AppColors.errorMain,
+                              NotificationHelper.show(
+                                context: context,
+                                title: 'Términos y Condiciones',
+                                message:
+                                    'Debes aceptar los términos y condiciones para continuar.',
+                                type: NotificationType.error,
+                                style: NotificationStyle.filled,
                               );
                             } else {
                               Get.offAllNamed(ConstantRoutesApp.home);

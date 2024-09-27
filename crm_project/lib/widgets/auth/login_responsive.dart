@@ -1,18 +1,20 @@
+import 'package:crm_project/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:crm_project/configs/configs.dart';
+import 'package:crm_project/controllers/controllers.dart';
 
-class LoginResponsive extends StatelessWidget {
+class LoginResponsive extends GetView<LoginController> {
   const LoginResponsive({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> formKey = GlobalKey();
+    GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     bool isMobile = Responsive.isMobile(context);
     SizeConfig().init(context);
@@ -60,7 +62,7 @@ class LoginResponsive extends StatelessWidget {
                   height: 20,
                 ),
                 Form(
-                  key: formKey,
+                  key: loginFormKey,
                   child: Column(
                     children: [
                       TextFormField(
@@ -68,6 +70,7 @@ class LoginResponsive extends StatelessWidget {
                           labelText: 'Correo',
                           hintText: 'Correo',
                         ),
+                        validator: (value) => controller.validateEmail(value!),
                       ),
                       const SizedBox(
                         height: 20,
@@ -84,6 +87,7 @@ class LoginResponsive extends StatelessWidget {
                           ),
                           hintText: 'Contraseña',
                         ),
+                        validator: (value) => controller.validatePassword(value!),
                       ),
                       const SizedBox(
                         height: 10,
@@ -93,13 +97,18 @@ class LoginResponsive extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Checkbox(
-                                value: false,
-                                onChanged: (value) {},
-                                activeColor: isDarkMode
-                                    ? AppColors.darkActionActive
-                                    : AppColors.lightActionActive,
+                             Obx(
+                                () =>  Checkbox(
+                                value: controller.isRememberMe.value,
+                                onChanged: (value) {
+                                  controller.updateRememberMe(value!);
+                                },
+                                activeColor: controller.isRememberMe.value
+                                  ? AppColors.primaryDarkMain
+                                  : AppColors.secondary,
+                              checkColor: AppColors.white,
                               ),
+                             ),
                               Text(
                                 'Recuérdame',
                                 style: TextStyle(
@@ -131,7 +140,12 @@ class LoginResponsive extends StatelessWidget {
                         height: 20,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          final isValid = validateAndSaveForm(loginFormKey);
+                          if (isValid) {
+                            Get.offAllNamed(ConstantRoutesApp.home);
+                          }
+                        },
                         child: const Text(
                           'INICIAR SESIÓN',
                           style: TextStyle(

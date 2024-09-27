@@ -80,6 +80,9 @@ class AppTheme {
         ),
       ),
     ),
+     checkboxTheme: const CheckboxThemeData(
+      overlayColor: WidgetStatePropertyAll(AppColors.lightActionHover),
+    ),
   );
 
   final darkTheme = ThemeData(
@@ -156,6 +159,9 @@ class AppTheme {
         backgroundColor: AppColors.primaryDarkContainedHover,
         elevation: 5,
       ),
+    ),
+    checkboxTheme: const CheckboxThemeData(
+      overlayColor: WidgetStatePropertyAll(AppColors.darkActionHover),
     ),
   );
 }

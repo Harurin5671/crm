@@ -6,6 +6,12 @@ import 'package:crm_project/screens/screens.dart';
 class AppRoutes {
   static final routes = [
     GetPage(
+      title: 'Home',
+      name: ConstantRoutesApp.home,
+      page: () => const HomeScreen(),
+      transition: Transition.fadeIn,
+    ),
+    GetPage(
       title: 'Sign Up',
       name: ConstantRoutesApp.signUp,
       page: () => const SignUpScreen(),
@@ -15,15 +21,16 @@ class AppRoutes {
     GetPage(
       title: 'Login',
       name: ConstantRoutesApp.login,
-      page: () => const LoginScreen(),
+      page: () => const ForgotPasswordScreen(),
       transition: Transition.fadeIn,
       binding: LoginBinding(),
     ),
     GetPage(
-      title: 'Home',
-      name: ConstantRoutesApp.home,
-      page: () => const HomeScreen(),
+      title: 'Forgot Password',
+      name: ConstantRoutesApp.forgotPassword,
+      page: () => const ForgotPasswordScreen(),
       transition: Transition.fadeIn,
+      // binding: ForgotPasswordBinding(),
     ),
     GetPage(
       title: 'Client',
