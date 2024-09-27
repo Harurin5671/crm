@@ -51,10 +51,10 @@ class AppColors {
   //Custom BG Colors
   static const lightCustomBgPrimary = Color(0xffC5B8D8);
   static const lightCustomBgSecondary = Color(0xffC6C7C6);
-  static const lightInfoCustomBg = Color(0xffB0C6DB);
-  static const lightSuccessCustomBg = Color(0xffB9CCBA);
-  static const lightWarningCustomBg = Color(0xffD9BFAA);  
-  static const lightErrorCustomBg = Color(0xffD6B5B3);
+  static const lightInfoCustomBg = Color(0xffe0f2fe);
+  static const lightSuccessCustomBg = Color(0xffe2f5ea);
+  static const lightWarningCustomBg = Color(0xffffedda);  
+  static const lightErrorCustomBg = Color(0xffffe8e0);
   static const lightMenuActive = Color(0xff093D81);
   //Primary Colors
   static const primaryLightMain = main;
@@ -129,10 +129,10 @@ class AppColors {
   //Custom BG Colors
   static const darkCustomBgPrimary = Color(0xff3d3360);
   static const darkCustomBgSecondary = Color(0xff3d3854);
-  static const darkInfoCustomBg = Color(0xff2f3a60);
-  static const darkSuccessCustomBg = Color(0xff353d4d);
-  static const darkWarningCustomBg = Color(0xff4A3F43);
-  static const darkErrorCustomBg = Color(0xff483149);
+  static const darkInfoCustomBg = Color(0xff323a61);
+  static const darkSuccessCustomBg = Color(0xff333d4d);
+  static const darkWarningCustomBg = Color(0xff503e3f);
+  static const darkErrorCustomBg = Color(0xff593044);
   //Dark Primary Colors
   static const primaryDarkMain = main;
   static const primaryDarkAlternativeLight = lightAlternativeLight;
