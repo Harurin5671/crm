@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:flutter_svg/svg.dart';
 
+import 'package:crm_project/utils/utils.dart';
 import 'package:crm_project/configs/configs.dart';
+import 'package:crm_project/controllers/controllers.dart';
 
-class SignUpResponsive extends StatelessWidget {
+class SignUpResponsive extends GetView<SignUpController> {
   const SignUpResponsive({
     super.key,
   });
-  // final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> formKey = GlobalKey();
+    GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     bool isMobile = Responsive.isMobile(context);
     SizeConfig().init(context);
@@ -58,28 +59,34 @@ class SignUpResponsive extends StatelessWidget {
                   height: 20,
                 ),
                 Form(
-                  key: formKey,
+                  key: signUpFormKey,
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: controller.username,
                         decoration: const InputDecoration(
                           labelText: 'Username',
                           hintText: 'Username',
                         ),
+                        validator: (value) =>
+                            controller.validateUsername(value!),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       TextFormField(
+                        controller: controller.email,
                         decoration: const InputDecoration(
                           labelText: 'Correo',
                           hintText: 'Correo',
                         ),
+                        validator: (value) => controller.validateEmail(value!),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       TextFormField(
+                        controller: controller.password,
                         obscureText: true,
                         decoration: InputDecoration(
                           labelText: 'Contraseña',
@@ -91,18 +98,26 @@ class SignUpResponsive extends StatelessWidget {
                           ),
                           hintText: 'Contraseña',
                         ),
+                        validator: (value) =>
+                            controller.validatePassword(value!),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: (value) {},
-                            activeColor: isDarkMode
-                                ? AppColors.darkActionActive
-                                : AppColors.lightActionActive,
+                          Obx(
+                            () => Checkbox(
+                              value: controller.isAcceptTerms.value,
+                              onChanged: (value) {
+                                // !controller.isAcceptTerms.value;
+                                controller.updateTerms(value!);
+                              },
+                              activeColor: controller.isAcceptTerms.value
+                                  ? AppColors.primaryDarkMain
+                                  : AppColors.secondary,
+                              checkColor: AppColors.white,
+                            ),
                           ),
                           const SizedBox(
                             width: 10,
@@ -123,8 +138,25 @@ class SignUpResponsive extends StatelessWidget {
                         height: 20,
                       ),
                       ElevatedButton(
-                        onPressed: () {
-                          Get.toNamed('/login');
+                        onPressed: () async {
+                          bool isValid = validateAndSaveForm(signUpFormKey);
+                          if (isValid) {
+                            if (!controller.isAcceptTerms.value) {
+                              Get.snackbar(
+                                icon: const Icon(
+                                  Icons.info_outline,
+                                  color: AppColors.white,
+                                ),
+                                'Términos y Condiciones',
+                                'Debes aceptar los términos y condiciones para continuar.',
+                                colorText: AppColors.white,
+                                backgroundColor: AppColors.errorMain,
+                              );
+                            } else {
+                              Get.offAllNamed(ConstantRoutesApp.home);
+                              controller.cleanForm();
+                            }
+                          }
                         },
                         child: const Text(
                           'REGISTRAR',
@@ -153,8 +185,7 @@ class SignUpResponsive extends StatelessWidget {
                             Expanded(
                               child: Container(
                                 height: 1,
-                                color:
-                                    AppColors.darkDivider,
+                                color: AppColors.darkDivider,
                               ),
                             ),
                           Padding(
