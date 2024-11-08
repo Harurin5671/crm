@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
       darkTheme: AppTheme().darkTheme,
       themeMode: ThemeMode.system,
       getPages: AppRoutes.routes,
-      initialRoute: '/sign-up',
+      initialRoute: '/profile',
       unknownRoute: GetPage(
           title: 'Not found',
           name: ConstantRoutesApp.notFound,

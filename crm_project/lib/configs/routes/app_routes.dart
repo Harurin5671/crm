@@ -29,5 +29,10 @@ class AppRoutes {
       name: '/client',
       page: () => const AddClientScreen(),
     ),
+    GetPage(
+      title: 'Profile',
+      name: '/profile',
+      page: () => const AccountProfileScreen(),
+    ),
   ];
 }
